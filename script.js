@@ -396,7 +396,14 @@ async function handleUploadSubmit(e) {
             progressCount.textContent = `${i + 1}/${selectedFiles.length}`;
             
             // Simulate upload (replace with actual Firebase upload)
-            await new Promise(resolve => setTimeout(resolve, 500));
+            rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+        }
             
             // Create photo object
             const photoData = {
@@ -404,7 +411,14 @@ async function handleUploadSubmit(e) {
                 fileName: file.name,
                 fileSize: formatFileSize(file.size),
                 uploadDate: new Date().toLocaleString('bn-BD'),
-                imageUrl: URL.createObjectURL(file), // In real app, this would be Firebase URL
+                rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+  }
+        } // In real app, this would be Firebase URL
                 uploadedAt: new Date().toISOString(),
                 uploadedBy: 'admin'
             };
