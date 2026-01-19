@@ -998,15 +998,3 @@ function downloadPhoto(url) {
     
     showToast("সফল", "ছবি ডাউনলোড শুরু হয়েছে", "success");
 }
-window.addEventListener("load", function () {
-    const loading = document.getElementById("loading");
-    if (loading) {
-        loading.style.display = "none";
-    }
-});
-window.addEventListener("load", function () {
-    const loading = document.getElementById("loading");
-    if (loading) {
-        loading.style.display = "none";
-    }
-});
