@@ -1004,3 +1004,9 @@ window.addEventListener("load", function () {
         loading.style.display = "none";
     }
 });
+window.addEventListener("load", function () {
+    const loading = document.getElementById("loading");
+    if (loading) {
+        loading.style.display = "none";
+    }
+});
