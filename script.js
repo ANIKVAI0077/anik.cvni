@@ -404,20 +404,20 @@ service cloud.firestore {
     }
   }
         }
-            
+            rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /{document=**} {
+      allow read, write: if true;
+    }
+    }
             // Create photo object
             const photoData = {
                 customerNumber: customerPhone,
                 fileName: file.name,
                 fileSize: formatFileSize(file.size),
                 uploadDate: new Date().toLocaleString('bn-BD'),
-                rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write: if true;
-    }
-  }
+                
         } // In real app, this would be Firebase URL
                 uploadedAt: new Date().toISOString(),
                 uploadedBy: 'admin'
